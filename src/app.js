@@ -25,8 +25,10 @@ app.use(express.urlencoded({ extended: false }));   // Para especificar que vamo
 //app.use(express.json());                                               // Para especificar que vamos a transferir información por el body en peticiones 
 
 //app.use(methodOverride('_method')); // Para poder utilizar PUT o DELETE sobreescribiendo el método POST
-app.use('/',routerMain);   
+   
 app.set('view engine', 'ejs');
-app.set('views', '../views');
+app.set('views', './views');
+
+app.use('/',routerMain);
 
 app.listen(process.env.PORT || 3002, function() { console.log("Servidor corriendo con exito"); })  // para levantar el servidor en un puerto especifico 

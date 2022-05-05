@@ -1,9 +1,8 @@
+const express= require('express');
 const controlador= {
 
     main:(req,res)=>{
-        res.render("main")
+      return res.render("main")
     }
-
 };
-
 module.exports=controlador;
