@@ -1,0 +1,25 @@
+
+.login{
+    width: auto;
+    height: auto;
+    background-color: gray;
+    display: flex;
+    margin: 30px;
+}
+.boxFormulario{
+    background-color: blueviolet;
+}
+.containerLogin{
+    background-color: blue;
+    flex-direction: column;
+}
+.labelFormulario{
+    background-color: aqua;
+    
+}
+.formularioInput{
+    background-color: red;
+}
+.logoLogin{
+    background-color: black;
+}

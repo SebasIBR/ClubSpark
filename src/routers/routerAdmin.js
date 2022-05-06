@@ -3,6 +3,6 @@ const controlador = require('../controllers/controllerMain');
 const routerAdmin= express.Router()
 const controladorAdmin= require('../controllers/controllerAdmin')
 
-routerAdmin.get('/login', controladorAdmin.login)
+routerAdmin.get('/', controladorAdmin.login)
 
 module.exports= routerAdmin;
