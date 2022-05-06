@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path'); 
 const routerMain = require('./routers/routerMain');
+const routerAdmin= require('./routers/routerAdmin')
 //const methodOverride = require('method-override');  
 //const session = require('express-session');
 //const ErrorMiddleware = require('./middlewares/ErrorMiddleware');
@@ -30,5 +31,6 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 app.use('/',routerMain);
+app.use('/',routerAdmin)
 
 app.listen(process.env.PORT || 3002, function() { console.log("Servidor corriendo con exito"); })  // para levantar el servidor en un puerto especifico 
