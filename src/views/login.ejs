@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./head')%>
-    <body>
+    <body class="Body">
     <main class="login">
-        <section class="logoLogin">
-            <h1>Imagen</h1>
-        </section>
-        <form class="formularioLogin" action="/">   
-        <section class="boxFormulario">
-            <div class="containerLogin">
-                <label class="labelFormulario" for="emailLogin">Correo</label>
-                <input class="formularioInput"  type="email" name="emailLogin">
-            </div>
-        </section>
-        <section class="boxFormulario">
-            <div class="containerLogin">
-                <label class="labelFormulario" for="passwordLogin">Contraseña</label>
-                <input class="formularioInput" type="password" name="passwordLogin">
-            </div>
-        </section>
-        </form>
-
+        <article class="contenedorLogo">
+            <section class="logoLogin">
+                <img src="/public/img/CSCMedblanco (1).png" alt="ClubSpark" class="logo">
+            </section>
+        </article>
+        <article class="contenedorFormulario">
+            <form class="formularioLogin" action="/"> 
+                <section class="boxFormulario">
+                    <h3>¡Bienvenido!</h3>
+                    <h4>Somos Club spark</h4>
+                </section>
+                <section class="boxFormulario">
+                    <label class="labelFormulario" for="emailLogin">Correo</label>
+                    <input class="formularioInput" type="email" name="emailLogin">
+                </section>
+                <section class="boxFormulario">
+                    <label class="labelFormulario" for="passwordLogin">Contraseña</label>
+                    <input class="formularioInput" type="password" name="passwordLogin">
+                </section>
+                <section class="boxFormulario">
+                    <input class="botonIngresar" type="submit" value="Ingresar"></input>
+                </section>
+            </form>
+        </article> 
     </main>
     </body>
 </html>
