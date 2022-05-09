@@ -3,10 +3,6 @@
     margin: 0%;
     padding: 0%;
 }
-.body{
-    background-color: red;
-}
-
 /*Login*/
 .login{
     background-color: gray;
@@ -18,7 +14,7 @@
     height: auto;
     border: solid 5%;
     border-radius: 7%;
-    background-color: red;
+    background-color: aqua;
 }
 .boxFormulario{
     display: flex;
@@ -31,10 +27,11 @@
 .labelFormulario{
     font-size: 150%;  
 }   
-.formularioIput{
-    min-width: 30%;
+.formularioInput{
+    width: 100%;
     height: 36px;
     border: solid 2px black;
+    border-radius: 12px;
 }
 .logoLogin{
     background-color: black;
@@ -55,3 +52,14 @@
     transition: 500ms background-color;
 }
 /*Register*/
+.Register{
+    background-color: black;
+        
+}
+.contenedorFormularioRegister{
+    width: auto;
+    height: auto;
+    border: solid 5%;
+    border-radius: 7%;
+    background-color:silver;
+}

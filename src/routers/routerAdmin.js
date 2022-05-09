@@ -4,5 +4,6 @@ const routerAdmin= express.Router()
 const controladorAdmin= require('../controllers/controllerAdmin')
 
 routerAdmin.get('/', controladorAdmin.login)
+routerAdmin.get('/register',controladorAdmin.register)
 
 module.exports= routerAdmin;
