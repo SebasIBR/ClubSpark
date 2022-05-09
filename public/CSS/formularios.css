@@ -52,14 +52,21 @@
     transition: 500ms background-color;
 }
 /*Register*/
-.Register{
+.BodyRegister{
+    height: 500px;
     background-color: black;
-        
+    background-image: url("/public/img/CSCMedblanco (1).png");
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:center;
+
+
 }
 .contenedorFormularioRegister{
-    width: auto;
+    width: 20vw;
     height: auto;
     border: solid 5%;
     border-radius: 7%;
     background-color:silver;
+    
 }
