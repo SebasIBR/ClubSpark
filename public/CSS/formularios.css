@@ -4,23 +4,33 @@
     padding: 0%;
 }
 /*Login*/
-.login{
-    background-color: gray;
-    display: flex;
-    flex-direction: row;
+.Body{
+    position: relative;
+    height: 500px;
+    background-color: black;
+    background-image: url("/public/img/CSCMedblanco (1).png");
+    background-repeat:no-repeat;
+    background-position-x:10%;
+    background-position-y:200%;
+    background-size: 50%;
 }
-.contenedorFormulario{
-    width: auto;
-    height: auto;
+.formularioLogin{
+    position: absolute;
+    width: 30%;
     border: solid 5%;
     border-radius: 7%;
-    background-color: aqua;
-}
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 65%;
+    margin-top: 11%;
+    padding: 3%;
+} 
 .boxFormulario{
     display: flex;
     width: 25vw;
     height: 4vw;
-    align-items: center;
     flex-direction: column;
     margin-right: 50%;
 }
@@ -33,16 +43,8 @@
     border: solid 2px black;
     border-radius: 12px;
 }
-.logoLogin{
-    background-color: black;
-}
-.logo{
-    width: 40vw;
-    color: black;
-    display: flex;
-}
 .botonIngresar{
-    background-color: white;
+    background-color: silver;
     border-width: 0px;
     border-radius: 12px;
     height: 36px;
@@ -50,23 +52,29 @@
     color: black;
     transition: 500ms color;
     transition: 500ms background-color;
-}
+} 
 /*Register*/
 .BodyRegister{
+    position: relative;
     height: 500px;
     background-color: black;
     background-image: url("/public/img/CSCMedblanco (1).png");
     background-repeat:no-repeat;
-    background-position-x:center;
-    background-position-y:center;
-
-
+    background-position-x:10%;
+    background-position-y:200%;
+    background-size: 50%;
 }
-.contenedorFormularioRegister{
-    width: 20vw;
-    height: auto;
+.formularioRegister{
+    position: absolute;
+    width: 30%;
     border: solid 5%;
     border-radius: 7%;
-    background-color:silver;
-    
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 65%;
+    margin-top: 2%;
+    padding: 3%;
 }
+
