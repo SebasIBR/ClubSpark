@@ -10,9 +10,29 @@ body{
     background-color: silver;
 }
 .header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
     background-color: black;
 
 }
 .logoMain{
+    margin: 1% 0% 1% 4%;
+    width: 20%;
     background-color: black;
 }
+.main-top{
+
+    font-size: x-large;;
+    padding-left: 5%;
+    width: 50%;
+    background-color: black;
+    display:  flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.selector{
+    color: silver;
+    text-decoration: none;
+}
+
