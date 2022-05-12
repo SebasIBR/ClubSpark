@@ -1,11 +1,14 @@
 const express= require('express');
-const controladorAdmin= {
+const controllerUser= {
 
     login:(req,res)=>{
       return res.render("login")
     },
     register:(req,res)=>{
       return res.render("register")
+    },
+    profile:(req,res)=>{
+      return res.render("profile")
     }
 };
-module.exports=controladorAdmin;
+module.exports=controllerUser;
