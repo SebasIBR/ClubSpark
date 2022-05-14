@@ -9,9 +9,6 @@ const routerUser= require('./routers/routerUser')
 
 const app = express();
 app.use('/public', express.static(path.resolve(__dirname, '../public')));
-//app.set('view engine', 'ejs')   // Seteo el motor de plantillas ejs
-
-//app.set('views', 'rutaCarpetaVistas’)  // Opcional. Solamente si quiero cambiar mi carpeta views
 
 //app.use(ErrorMiddleware);   // Opcional. Aplicar middleware a nivel aplicación
 

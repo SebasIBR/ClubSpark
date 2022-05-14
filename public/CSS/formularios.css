@@ -1,45 +1,40 @@
-*{
-    box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
-}
+
 /*Login*/
-.Body{
+.mainBody{
     position: relative;
     height: 500px;
     background-color: black;
     background-image: url("/public/img/CSCMedblanco (1).png");
     background-repeat:no-repeat;
     background-position-x:10%;
-    background-position-y:200%;
+    background-position-y:60%;
     background-size: 50%;
 }
 .formularioLogin{
     position: absolute;
-    width: 30%;
+    width: 23%;
     border: solid 5%;
     border-radius: 7%;
     background-color:white;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 65%;
-    margin-top: 11%;
-    padding: 3%;
+    margin-left: 60%;
+    margin-top: 8%;
+    padding: 2%;
+    font-size: 70%;
 } 
 .boxFormulario{
     display: flex;
-    width: 25vw;
-    height: 4vw;
+    width: 100%;
     flex-direction: column;
-    margin-right: 50%;
 }
 .labelFormulario{
-    font-size: 150%;  
+    font-size: 100%;  
 }   
 .formularioInput{
     width: 100%;
-    height: 36px;
+    height: 30%;
     border: solid 2px black;
     border-radius: 12px;
 }
@@ -50,31 +45,32 @@
     height: 36px;
     width: 100%;
     color: black;
-    transition: 500ms color;
-    transition: 500ms background-color;
+    transition: 500ms color black ;
+    transition: 500ms background-color black;
 } 
 /*Register*/
-.BodyRegister{
+.registerBody{
     position: relative;
     height: 500px;
     background-color: black;
     background-image: url("/public/img/CSCMedblanco (1).png");
     background-repeat:no-repeat;
     background-position-x:10%;
-    background-position-y:200%;
+    background-position-y:60%;
     background-size: 50%;
 }
 .formularioRegister{
     position: absolute;
-    width: 30%;
+    width: 23%;
     border: solid 5%;
     border-radius: 7%;
     background-color:white;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 65%;
+    margin-left: 60%;
     margin-top: 2%;
-    padding: 3%;
+    padding: 2%;
+    font-size: 70%;
 }
 
