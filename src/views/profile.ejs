@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <%-include('./head')%>
-<body>
+<body class="bodymain">
     <%-include('./header')%>
-    <h1>UsuarioComun</h1>
+    <section class="contenedorUser">
+        <article class="contenedorImagenPerfil">
+            <div>Imagen de Perfil</div>
+        </article>
+        <article class="itemGeneral">
+            <div class="itemuser">
+                <div>Nombre de Usuario:</div>sebastian
+            </div>
+            <div class="itemuser">
+                <div>Correo</div>negraoo@hotamil.es
+            </div>
+            <div class="itemuser">
+                <button>Cambiar contraseña</button>
+            </div>
+            <div>
+                <button>Cerrar Session</button>
+            </div>
+        </article>
+    </section>
     <%-include('./footer')%>
 </body>
 </html>
