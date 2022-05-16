@@ -3,7 +3,7 @@ const path = require('path');
 const routerMain = require('./routers/routerMain');
 const routerUser= require('./routers/routerUser');
 const routerPublications=require('./routers/routerPublications')
-//const methodOverride = require('method-override');  
+const methodOverride = require('method-override');  
 //const session = require('express-session');
 //const ErrorMiddleware = require('./middlewares/ErrorMiddleware');
 //const productosRoutes = require('./routes/productosRoutes');  // Enrutador
@@ -23,7 +23,7 @@ app.use('/public', express.static(path.resolve(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));   // Para especificar que vamos a transferir información por el body en peticiones 
 //app.use(express.json());                                               // Para especificar que vamos a transferir información por el body en peticiones 
 
-//app.use(methodOverride('_method')); // Para poder utilizar PUT o DELETE sobreescribiendo el método POST
+app.use(methodOverride('_method')); // Para poder utilizar PUT o DELETE sobreescribiendo el método POST
    
 app.set('view engine', 'ejs');
 app.set('views', './views');

@@ -3,14 +3,14 @@
 <%-include('./head')%>
 <body>
     <main>
-        <form method="POST" action="/publication/create">
+        <form method="POST" action="/publication/<%=publicacion.id %>?_method=PUT">
             <div>
                 <label for="imagePublication">imagen</label></div><div>
                 <input type="file" id="imagePublication" name="imagePublication">
             </div>
             <div>
                 <label for="description">descripcion</label></div><div>
-                <input type="text" id="description" name="description">
+                <input type="text" id="description" name="description" placeholder="<%=publicacion.description%>" value="<%= publicacion.description %>">
             </div>
             <div>
                 <input type="submit">

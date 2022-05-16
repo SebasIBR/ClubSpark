@@ -13,7 +13,7 @@ const controllerPublications={
         
     },
     create:(req,res)=>{
-        res.render("publications")
+        res.render("createPublications")
 
     },
     createPost:(req,res)=>{
@@ -31,13 +31,30 @@ res.redirect("/main");
         
     },
     edit:(req,res)=>{
+        let publicacion=0;
+
+        for(let i=0;i<publication.length;i++){
+            if(publication[i].id== req.params.id)
+            publicacion=publication[i];
+        }
         
+        res.render("editPublication",{publicacion:publicacion})
     },
     editPut:(req,res)=>{
-        
+        let idPublicacionSeleccionado = req.params.id;
+		for (let p of publication){
+			if(p.id==idPublicacionSeleccionado){
+                p.image=req.body.imagePublication;
+                p.description=req.body.description;				
+                break;
+			}
+		}
+
+		fs.writeFileSync("../data/publication.json", JSON.stringify(publication,null,' '));
+		res.redirect("/main");
     },
     deleteP:(req,res)=>{
    
     }
-};
+}
 module.exports=controllerPublications

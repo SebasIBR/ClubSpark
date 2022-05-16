@@ -13,7 +13,7 @@ routerPublications.post('/publication/create',controladorPublicaciones.createPos
 
 //Editar
 routerPublications.get('/publication/edit/:id',controladorPublicaciones.edit)
-routerPublications.put('publication/:id',controladorPublicaciones.editPut)
+routerPublications.put('/publication/:id',controladorPublicaciones.editPut)
 
 //Eliminar
 routerPublications.delete('/publication/delete/:id',controladorPublicaciones.deleteP)
