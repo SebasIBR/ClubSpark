@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include('./head')%>
+<body>
+    <main>
+        <form method="POST" action="/publication/create">
+            <div>
+                <label for="imagePublication">imagen</label></div><div>
+                <input type="file" id="imagePublication" name="imagePublication">
+            </div>
+            <div>
+                <label for="description">descripcion</label></div><div>
+                <input type="text" id="description" name="description">
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </form>
+    </main>
+    
+
+    <%-include('./footer')%>
+</body>
+
+</html>
