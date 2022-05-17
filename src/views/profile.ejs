@@ -9,16 +9,25 @@
         </article>
         <article class="itemGeneral">
             <div class="itemuser">
-                <div>Nombre de Usuario:</div><%=userData.username %>
+                <div>Nombre de Usuario: <!-- <%=userData.username %> --> sebastian</div>
             </div>
             <div class="itemuser">
-                <div>Correo</div><%=userData.email %>
+                <div>Correo: <%=userData.email %></div>
             </div>
             <div class="itemuser">
-                <button>Cambiar contraseña</button>
+                <a href="/src/views/createPublications.ejs">
+                    <input type="submit" value="Crear Publicacion" >
+                </a>
+            </div>
+            <div class="itemuser">
+                <a href="/src/views/changePassword.ejs">
+                    <input type="submit" value="Cambiar Contraseña" >
+                </a>
             </div>
             <div>
-                <button>Cerrar Session</button>
+                <a">
+                    <input type="submit" value="cerrar session " >
+                </a>
             </div>
         </article>
     </section>

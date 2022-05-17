@@ -10,21 +10,30 @@ const controllerUser= {
       return res.render("login")
     },
     loginPost:(req,res)=>{
-      const userToLogin = users.find(oneUser=> oneUser.email===req.body.emailLogin);
-      if(userToLogin===undefined){
-        return res.send("Este usuario no existe")
-      }
-      if(userToLogin!==undefined){
-        const isPasswordOk = bcrypt.compareSync(req.body.passwordLogin,userToLogin.password);
-        if(!isPasswordOk){
-          return res.send("las contraseñas no coinciden")
-        }
-        delete userToLogin.password
-        req.session.user=userToLogin
-        res.cookie("email",userToLogin.email,{maxAge:100*60}*30)
+      const usertologin= users.find(oneuser=>oneuser.email===req.body.emailLogin);
 
-        return res.redirect("/profile")
+      if(usertologin=== undefined){
+        res.send("no existe el usuario")
       }
+      if(usertologin !== undefined){
+        const isPasswordOk = bcrypt.compareSync(req.body.passwordLogin,usertologin.password);
+        
+        if(!isPasswordOk){
+          res.send("las contraseñas no coinciden")
+        }
+
+        delete usertologin.password;
+        req.session.userdb=usertologin;
+
+        res.cookie("email",usertologin.email,{maxAge:(100*60)*30})
+
+
+
+
+
+        return res.redirect('/profile')
+      }
+ 
     },
     register:(req,res)=>{
       return res.render("register")
@@ -46,12 +55,24 @@ const controllerUser= {
 	res.redirect("/profile");
     },
     profile:(req,res)=>{
-      return res.render("profile",{userData:req.session.user})
+      console.log(req.cookies.email)
+
+      return res.render("profile",{
+        userData: req.session.userdb
+      })
     },
     logout:(req,res)=>{
-      req.session.destroy();
-      res.clearCookie("email");
-      res.redirect('/')
+
+    },
+    edit:(req,res)=>{
+      let usuario=0
+      for(let i;i<users.length;i++){
+        if(users[i].id== req.params.id)
+        usuario=users[i];
+      }
+      res.render("changePassword",{usuario:usuario})
+
+
     }
 };
 module.exports=controllerUser;

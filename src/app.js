@@ -6,7 +6,7 @@ const routerPublications=require('./routers/routerPublications')
 const methodOverride = require('method-override');  
 const session = require('express-session');
 const cookieParser= require('cookie-parser');
-const mdUserCookie=require('./middlewares/mdUserCookie')
+// const mdUserCookie=require('./middlewares/mdUserCookie')
 //const ErrorMiddleware = require('./middlewares/ErrorMiddleware');
 //const productosRoutes = require('./routes/productosRoutes');  // Enrutador
 
@@ -31,7 +31,8 @@ app.use(express.urlencoded({ extended: false }));   // Para especificar que vamo
 
 app.use(methodOverride('_method')); // Para poder utilizar PUT o DELETE sobreescribiendo el método POST
 app.use(cookieParser())
-app.use(mdUserCookie)
+// app.use(mdUserCookie)
+
    
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -39,5 +40,10 @@ app.set('views', './views');
 app.use('/',routerMain);
 app.use('/',routerUser);
 app.use('/',routerPublications)
+
+app.use((req,res,next)=>{
+    res.status(404).render('not-found', {errno: 404, errmsg:"Pagina no encontrada."});
+})
+
 
 app.listen(process.env.PORT || 3002, function() { console.log("Servidor corriendo con exito"); })  // para levantar el servidor en un puerto especifico 

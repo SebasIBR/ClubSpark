@@ -1,17 +1,14 @@
-const fs = require('fs');
+/* const fs = require('fs');
 const path = require('path');
-const userDB= path.resolve(__dirname, '../../data/user.json');
-
-const users = JSON.parse(fs.readFileSync(userDB,"utf8"))
+const users = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/user.json'), 'utf-8'));
 
 const userCookie =(req,res,next)=>{
-    res.locals.isUserLogged=false;
+
     if(req.cookies.email !==undefined){
-        const userTologin = users.find(oneUser=> oneUser.email===req.cookies.emailLogin);
-        req.session.user=userTologin;
-        res.locals.isUserLogged=true;
+        const usertologin= users.find(oneuser=>oneuser.email===req.body.emailLogin)
+        req.session.userdb=usertologin;
     }
     next();
 
 }
-module.exports= userCookie
+module.exports= userCookie */
