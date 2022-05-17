@@ -1,7 +1,7 @@
 const express=require('express');
 const fs=require('fs');
 const path = require('path');
-const publication = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/publication.json'), 'utf-8'));
+let publication = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/publication.json'), 'utf-8'));
 
 
 const controllerPublications={
@@ -53,8 +53,16 @@ res.redirect("/main");
 		fs.writeFileSync("../data/publication.json", JSON.stringify(publication,null,' '));
 		res.redirect("/main");
     },
-    deleteP:(req,res)=>{
-   
+    delete:(req,res)=>{
+        let idPublicacionSeleccionado=req.params.id;
+
+        let publication2=publication.filter(function(element){
+            return element.id!=idPublicacionSeleccionado;
+        })
+        publication=publication2;
+
+        fs.writeFileSync("../data/publication.json", JSON.stringify(publication2,null,' '));
+		res.redirect("/main");
     }
 }
 module.exports=controllerPublications

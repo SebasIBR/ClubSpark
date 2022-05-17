@@ -1,1 +1,32 @@
-[{"id":1,"username":"sebastian","email":"sebas@hot.com","password":"123","password2":"123","type":"Comun"},{"id":2,"username":"cris","email":"cris@hot.com","password":"123","password2":"123","type":"Administrador"}]
+[
+ {
+  "id": 1,
+  "username": "prueba",
+  "email": "prueba@spark.com",
+  "type": "Comun",
+  "image": ""
+ },
+ {
+  "id": 2,
+  "username": "prueba2",
+  "email": "prueba2@spark.com",
+  "type": "Comun",
+  "image": ""
+ },
+ {
+  "id": 3,
+  "username": "manuela",
+  "email": "manu@spark.com",
+  "password": "$2a$10$0/ZUVx8sPc282w4OYqLhGu3TxWIiIiK1EcuSWNLg3BnMWboKvpViO",
+  "type": "Comun",
+  "image": ""
+ },
+ {
+  "id": 4,
+  "username": "pruebat",
+  "email": "pruebat@spark.com",
+  "password": "$2a$10$KhIxymQd5Glx3bSRk7sQweykW5sJQk6zyOI7Ud.RUxrulCzBP0T/m",
+  "type": "Comun",
+  "image": ""
+ }
+]

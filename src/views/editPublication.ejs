@@ -15,6 +15,11 @@
             <div>
                 <input type="submit">
             </div>
+            <div>
+                <form action="/publication/delete/<%= publicacion.id %>?_method=DELETE" method="POST">
+                    <button type="submit">Eliminar publicacion</button>
+                </form>
+            </div>
         </form>
     </main>
     

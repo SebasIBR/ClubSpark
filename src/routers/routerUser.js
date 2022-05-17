@@ -10,5 +10,6 @@ routerUser.get('/register',controladorUser.register)
 routerUser.post('/register',controladorUser.registerPost)
 // Perfil de Usuario
 routerUser.get('/profile',controladorUser.profile)
+routerUser.get('/logout',controladorUser.logout)
 
 module.exports= routerUser;

@@ -4,7 +4,9 @@ const routerMain = require('./routers/routerMain');
 const routerUser= require('./routers/routerUser');
 const routerPublications=require('./routers/routerPublications')
 const methodOverride = require('method-override');  
-//const session = require('express-session');
+const session = require('express-session');
+const cookieParser= require('cookie-parser');
+const mdUserCookie=require('./middlewares/mdUserCookie')
 //const ErrorMiddleware = require('./middlewares/ErrorMiddleware');
 //const productosRoutes = require('./routes/productosRoutes');  // Enrutador
 
@@ -18,12 +20,18 @@ app.use('/public', express.static(path.resolve(__dirname, '../public')));
 
 //app.use('/');   // Definición de ruta global para un enrutador particular
 
-//app.use(session( {secret: "Este es mi secreto"} ));    // para definir que vas a utilizar información en sesión
+app.use(session( {
+    secret: "Verificacion correcta",
+    resave: true,
+    saveUninitialized:false,
+} ));    // para definir que vas a utilizar información en sesión
 
 app.use(express.urlencoded({ extended: false }));   // Para especificar que vamos a transferir información por el body en peticiones 
 //app.use(express.json());                                               // Para especificar que vamos a transferir información por el body en peticiones 
 
 app.use(methodOverride('_method')); // Para poder utilizar PUT o DELETE sobreescribiendo el método POST
+app.use(cookieParser())
+app.use(mdUserCookie)
    
 app.set('view engine', 'ejs');
 app.set('views', './views');
