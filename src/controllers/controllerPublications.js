@@ -3,18 +3,13 @@ let db=require('../../database/models')
 const controllerPublications={
 
     publicaciones:(req,res)=>{
-        db.publication.findAll()
-            .then(function(publication){
-               return res.render("publication", {publication:publication})
-            })
-/* 
         (async()=>{
-            let publication = await db.publication.findOne({where: {id: req.params.id}});
+            let publication = await db.publication.findAll();
             if (publication === null)
-            return res.render('not-found', {errno: 404, errmsg: "El indice no corresponde a ningun producto"});
-            let lista= await db.publication.findAll({where:{id:req.params.id}});
-            return res.render("publication",{publication:publication,publication_list:lista})
-        })() */
+                return res.render('not-found', {errno: 404, errmsg: "El indice no corresponde a ningun producto"});
+
+            return res.render("publication",{publication:publication})
+        })()
     },
     publicacionesDetalle:(req,res)=>{
         
@@ -24,48 +19,51 @@ const controllerPublications={
 
     },
     createPost:(req,res)=>{
-        db.publication.create({
-            id:0,
-            image: req.body.imagePublication,
-            description:req.body.description,
-            user_id:1
-        })
-    res.redirect("/publication");
-        
+        (async()=>{
+            db.publication.create({
+                id:0,
+                image: req.file.filename,
+                description:req.body.description,
+                user_id:1
+            })
+            return res.redirect("/publication");
+        })()     
     },
     edit:(req,res)=>{
-        let publicacion=0;
+        (async()=>{
+            let publicacion= await db.publication.findOne({where:{id:req.params.id}});
 
-        for(let i=0;i<publication.length;i++){
-            if(publication[i].id== req.params.id)
-            publicacion=publication[i];
-        }
-        
-        res.render("editPublication",{publicacion:publicacion})
+            if(publicacion===null)
+                return res.render("not-found"),{errno: 404, errmsg: "El indice no corresponde a ningun producto"}
+            else
+                return res.render("editPublication",{publicacion:publicacion})
+        })()
     },
     editPut:(req,res)=>{
-        let idPublicacionSeleccionado = req.params.id;
-		for (let p of publication){
-			if(p.id==idPublicacionSeleccionado){
-                p.image=req.body.imagePublication;
-                p.description=req.body.description;				
-                break;
-			}
-		}
-
-		fs.writeFileSync("../data/publication.json", JSON.stringify(publication,null,' '));
-		res.redirect("/publication");
+        (async ()=>{
+        let p = await db.publication.findOne({where:{id: req.params.id}});
+        if (p===null)
+            return res.render('not-found', {errno: 404, errmsg: "El indice no corresponde a ningun producto"});
+        p.description=req.body.description;
+        p.save();
+        return res.redirect("/publication")
+        })()
     },
     delete:(req,res)=>{
-        let idPublicacionSeleccionado=req.params.id;
 
-        let publication2=publication.filter(function(element){
-            return element.id!=idPublicacionSeleccionado;
+        db.publication.destroy({
+            where: {
+                id: req.params.is
+            }
         })
-        publication=publication2;
 
-        fs.writeFileSync("../data/publication.json", JSON.stringify(publication2,null,' '));
-		res.redirect("/publication");
+/*         (async()=>{
+            let p = await db.publication.findOne({where:{id: req.params.id}});
+            if (p === null)
+            return res.render('not-found', {errno: 404, errmsg: "El indice no corresponde a ningun producto"});  
+            p.destroy();
+            return res.redirect('/publication')
+        })() */
     }
 }
 module.exports=controllerPublications

@@ -18,6 +18,6 @@ routerPublications.get('/publication/edit/:id',controladorPublicaciones.edit)
 routerPublications.put('/publication/:id',controladorPublicaciones.editPut)
 
 //Eliminar
-routerPublications.delete('/publication/delete/:id',controladorPublicaciones.delete)
+routerPublications.delete('/delete/:id',controladorPublicaciones.delete)
 
 module.exports=routerPublications
