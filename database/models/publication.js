@@ -4,8 +4,8 @@ module.exports=function(sequelize,DataTypes){
 
     let cols={
         id:{type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-        image:{type: DataTypes.TEXT, allowNull: false, unique: true},
-        description:{type: DataTypes.TEXT, allowNull:false, unique:true},
+        image: DataTypes.BLOB,
+        description:DataTypes.TEXT,
         user_id:{type: DataTypes.INTEGER, allowNull:false, unique:true}
     }
     let config={

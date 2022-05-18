@@ -1,3 +1,10 @@
 [
-
+ {
+  "id": 1,
+  "username": "p",
+  "email": "p@s.com",
+  "password": "$2a$10$GzRTHErm0dC9OYN5tr8r9ukjn3/ApFVakSZUkvkkTZV21ldRKLIPe",
+  "type": "Comun",
+  "image": ""
+ }
 ]

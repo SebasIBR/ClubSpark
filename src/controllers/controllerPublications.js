@@ -1,13 +1,20 @@
 const express=require('express');
-const fs=require('fs');
-const path = require('path');
-let publication = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/publication.json'), 'utf-8'));
-
-
+let db=require('../../database/models')
 const controllerPublications={
 
     publicaciones:(req,res)=>{
-        res.render("main")
+        db.publication.findAll()
+            .then(function(publication){
+               return res.render("publication", {publication:publication})
+            })
+/* 
+        (async()=>{
+            let publication = await db.publication.findOne({where: {id: req.params.id}});
+            if (publication === null)
+            return res.render('not-found', {errno: 404, errmsg: "El indice no corresponde a ningun producto"});
+            let lista= await db.publication.findAll({where:{id:req.params.id}});
+            return res.render("publication",{publication:publication,publication_list:lista})
+        })() */
     },
     publicacionesDetalle:(req,res)=>{
         
@@ -17,17 +24,13 @@ const controllerPublications={
 
     },
     createPost:(req,res)=>{
-        let newPublicationDB = publication;
-
-        newPublicationDB.push({
-            id:publication.length+1,
-            image:req.body.imagePublication,
-            description:req.body.description
-});
-
-fs.writeFileSync("../data/publication.json", JSON.stringify(newPublicationDB));
-
-res.redirect("/main");
+        db.publication.create({
+            id:0,
+            image: req.body.imagePublication,
+            description:req.body.description,
+            user_id:1
+        })
+    res.redirect("/publication");
         
     },
     edit:(req,res)=>{
@@ -51,7 +54,7 @@ res.redirect("/main");
 		}
 
 		fs.writeFileSync("../data/publication.json", JSON.stringify(publication,null,' '));
-		res.redirect("/main");
+		res.redirect("/publication");
     },
     delete:(req,res)=>{
         let idPublicacionSeleccionado=req.params.id;
@@ -62,7 +65,7 @@ res.redirect("/main");
         publication=publication2;
 
         fs.writeFileSync("../data/publication.json", JSON.stringify(publication2,null,' '));
-		res.redirect("/main");
+		res.redirect("/publication");
     }
 }
 module.exports=controllerPublications

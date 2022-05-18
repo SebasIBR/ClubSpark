@@ -1,12 +1,9 @@
-/* Body*/
-*{
+body{
+    background-color: silver;
+    margin: 0%;
     font-family: 'Bebas Neue', cursive;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box; 
-}
-
-.bodymain{
-    background-color: silver;
 } 
 
 /* Header */
@@ -34,30 +31,8 @@
 .selector{
     color: silver;
     text-decoration: none;
-} */
-
-/* Main */
-
- .publicaciones{
-    padding-top: 10%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.publicaciones div{
-    border: solid 15px #ebebeb;
-    display:block
-}
-.articulo i{
-    display: flex;
-    flex-direction: column;
-}
-.publicaciones div img{
-    width: 30vw;
-    margin: auto;
 } 
 /* Footer */
-
  .footer{
     color: silver;
     width: 100%;
@@ -73,3 +48,6 @@
     width: 80%;
     justify-content: space-around;
 }  
+.imagen{
+    width: 50%;
+}
