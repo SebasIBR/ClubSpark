@@ -1,16 +1,16 @@
-const fs = require('fs');
-const path = require('path');
-const users = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/user.json'), 'utf-8'));
+const db = require('../../database/models/users')
 
-const userCookie =(req,res,next)=>{
+const userCookie = async(req,res,next)=>{
     res.locals.isUserLogged=false;
 
     if(req.cookies.email !==undefined){
-        const usertologin= users.find(oneuser=>oneuser.email===req.body.emailLogin)
-        req.session.userdb=usertologin;
-        res.locals.isUserLogged=true;
+
+        await db.users.findOne({ where: { email: req.cookies.email }}).then(p=>{
+            const usertologin= p;
+            req.session.user=usertologin;
+            res.locals.isUserLogged=true;
+        })
     }
     next();
-
 }
 module.exports= userCookie

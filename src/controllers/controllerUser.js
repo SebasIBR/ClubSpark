@@ -1,58 +1,72 @@
 const express= require('express');
-const fs=require('fs');
-const path = require('path');
+let db=require('../../database/models')
 const bcrypt = require('bcryptjs')
 
-const users = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/user.json'), 'utf-8'));
+
 
 const controllerUser= {
      login:(req,res)=>{
       return res.render("login")
     },
+
     loginPost:(req,res)=>{
-      const usertologin= users.find(oneuser=>oneuser.email===req.body.emailLogin);
-
-      if(usertologin=== undefined){
-        res.send("no existe el usuario")
-      }
-      if(usertologin !== undefined){
-        const isPasswordOk = bcrypt.compareSync(req.body.passwordLogin,usertologin.password);
-        
-        if(!isPasswordOk){
-          res.send("las contraseñas no coinciden")
+      (async()=>{
+        const usertologin= await db.users.findOne({where:{id: req.body.emailLogin}})
+        if(usertologin !== null){
+          if(!bcrypt.compareSync(req.body.passwordLogin,usertologin.password))
+          {
+            req.boy.passwordLogin = null;
+            return res.render("login", {errors: {contrasenausuario: "Contraseña incorrecta"}, old: req.body});
+          }else{
+            req.session.users=usertologin;
+            res.cookie("email",usertologin.email,{maxAge:1000*60}*30)
+            return res.redirect("profile")
+          }
         }
-
-        delete usertologin.password;
-        req.session.userdb=usertologin;
-
-        res.cookie("email",usertologin.email,{maxAge:(100*60)*30})
-
-
-
-
-
-        return res.redirect('/profile')
-      }
+      })()
  
     },
     register:(req,res)=>{
       return res.render("register")
     },
     registerPost:(req,res)=>{
-      let newUserDB = users;
+      (async () => {
+        let u = await db.users.findOne({where: {username: req.body.userName}});
+        if (u === null)
+        {
+            const [new_user, created] = await db.users.findOrCreate({
+                where: {email: req.body.emailRegister},
+                defaults: {
+                    username: req.body.userName,
+                    email: req.body.emailRegister,
+                    password: bcrypt.hashSync(req.body.passwordRegister, 10),
+                    type: req.body.type,
+                    image: req.file.filename
+                }});
+            
+            if (created)
+            {
+                req.session.user = new_user;
+                
+                res.cookie("email", new_user.email,{maxAge:(1000*60)*30})
 
-			newUserDB.push({
-        id:users.length+1,
-	    	username: req.body.userName,
-	    	email: req.body.emailRegister,
-	   		password: bcrypt.hashSync(req.body.passwordRegister,10),
-        type:req.body.tipoDeusuario,
-        image:req.body.userImage
-	});
+                return res.redirect("profile");
+            }
+            else
+                return res.render("register", {errors: {emailusuario:  "Este E-mail ya esta registrado"}, old: req.body});
+        }
+        else
+            return res.render("register", {errors: {nombreusuario: "Este nombre de usuario ya se encuentra en uso"}, old: req.body});
+    })();
 
-	fs.writeFileSync("../data/user.json", JSON.stringify(newUserDB, null," "));
-	
-	res.redirect("/profile");
+
+
+
+
+
+
+
+	  res.redirect("/profile");
     },
     profile:(req,res)=>{
       console.log(req.cookies.email)
