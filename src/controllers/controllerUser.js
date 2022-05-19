@@ -38,11 +38,15 @@ const controllerUser= {
       }
       delete userToLogin.password
       req.session.user =userToLogin
+
+      res.cookie("email", userToLogin.email,{maxAge:(1000*60)*30})
+
       return res.redirect("/profile")
     }
     })()
   },
   profile:(req,res)=>{
+    console.log(req.cookies.email)
    return res.render("profile",{userData:req.session.user});
 
   }

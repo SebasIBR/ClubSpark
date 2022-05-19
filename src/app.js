@@ -19,9 +19,9 @@ app.use(session( {secret: "Verificacion correcta",resave: true,saveUninitialized
 app.use(cookieParser())
 app.use(cors())
 
-const mdUserCookie=require('./middlewares/mdUserCookie')
+/* const mdUserCookie=require('./middlewares/mdUserCookie')
 app.use(mdUserCookie)
-
+ */
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
