@@ -29,8 +29,8 @@ app.use('/',routerMain);
 app.use('/',routerUser);
 app.use('/',routerPublications)
 
-app.use((req,res,next)=>{
-    res.status(404).render('not-found', {errno: 404, errmsg:"Pagina no encontrada."});
-})
+// app.use((req,res,next)=>{
+//     res.status(404).render('not-found', {errno: 404, errmsg:"Pagina no encontrada."});
+// })
 
 app.listen(process.env.PORT || 3002, function() { console.log("Servidor corriendo con exito"); })  

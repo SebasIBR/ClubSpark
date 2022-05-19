@@ -4,7 +4,7 @@
 <body class="registerBody">
     <main class="Register">
         <article class="contenedorFormularioRegister">
-            <form class="formularioRegister" action="/Register" method="POST" enctype="multipart/form-data"> 
+            <form class="formularioRegister" action="/register" method="POST" enctype="multipart/form-data"> 
                 <section class="boxFormularioRegister">
                     <h3>¡Bienvenido!</h3>
                     <h4>Crea una cuenta y se parte del Club Spark Colombia</h4>
@@ -25,10 +25,10 @@
                 </section>
                 <section class="boxFormulario">
                     <label for="">Seleccione el tipo de usuario</label>
-                    <select name="tipoDeusuario" id="tipoDeusuario">
-                    <optgroup label="Tipo de usuario" name="type">
-                        <option value= 0 >comun</option>
-                        <option value= 1 >administrador</option>
+                    <select id="type" name="type">
+                    <optgroup label="Tipo de usuario">
+                        <option name="type" value= "0" >comun</option>
+                        <option name="type" value= "1" >administrador</option>
                     </optgroup>
                     </select>
                 </section>
