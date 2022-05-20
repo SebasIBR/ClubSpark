@@ -137,7 +137,12 @@ const controllerUser= {
                        });
           res.send({count: count, users: userlist});
       })();
-
-    }
+    },
+    apiCout:(req,res)=>{
+      (async ()=>{
+        const cantidad = await fetch('http://localhost:3002/api').then(response => response.json())
+         return res.render("adminCenter",{cantidad:cantidad.count})
+        })
+      }
   }
 module.exports=controllerUser;
