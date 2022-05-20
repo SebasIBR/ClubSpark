@@ -31,7 +31,8 @@ routerUser.post('/admin/register',upload.single('userImageR'),controladorUser.ad
 routerUser.get('/admin/edit/:id',controladorUser.adminEditUser)
 routerUser.put('/admin/:id',upload.single('userImageE'),controladorUser.adminEditPutUser)
 
-
+// Api
+routerUser.get('/api',controladorUser.api)
 
 
 

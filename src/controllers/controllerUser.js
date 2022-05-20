@@ -123,6 +123,21 @@ const controllerUser= {
         p.save();
         return res.redirect("/admin/view")
     })()
+    },
+    api:(req,res)=>{
+      (async () =>
+      {
+          let userlist = [];
+          const {count,rows} = await db.users.findAndCountAll();
+          rows.forEach(users =>
+                       {
+                           var tempuser = users.toJSON();
+                           delete tempuser.password;
+                           userlist.push(tempuser);
+                       });
+          res.send({count: count, users: userlist});
+      })();
+
     }
   }
 module.exports=controllerUser;
