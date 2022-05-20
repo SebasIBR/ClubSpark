@@ -9,12 +9,31 @@ const controladorUser= require('../controllers/controllerUser')
 // Formulario Login
 routerUser.get('/', controladorUser.login)
 routerUser.post('/',controladorUser.loginPost)
-// routerUser.get('/logout',controladorUser.logout)
+ routerUser.get('/user/logout',controladorUser.logout)
 // Formulario Register
 routerUser.get('/register',controladorUser.register)
 routerUser.post('/register',upload.single('userImage'),controladorUser.registerPost)
 // Perfil de usuario
 routerUser.get('/profile',controladorUser.profile)
-// routerUser.post('/profile/edit/id:',controladorUser.edit)
+// Editar contraseña
+routerUser.get('/profile/edit/:id',controladorUser.editUser)
+routerUser.put('/profile/:id',controladorUser.editPutUser)
+
+// Usuario administrador usar una vista llamada usuarios 
+routerUser.get("/admin",controladorUser.adminCenter)
+
+// Visualizador de Usuarios
+routerUser.get("/admin/view",controladorUser.adminView)
+// Registro de usuarios
+routerUser.get('/admin/register',controladorUser.adminRegister)
+routerUser.post('/admin/register',upload.single('userImageR'),controladorUser.adminRegisterPost)
+// Editor de usauarios
+routerUser.get('/admin/edit/:id',controladorUser.adminEditUser)
+routerUser.put('/admin/:id',upload.single('userImageE'),controladorUser.adminEditPutUser)
+
+
+
+
+
 
 module.exports= routerUser;

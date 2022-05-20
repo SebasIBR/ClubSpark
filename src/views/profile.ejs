@@ -3,8 +3,20 @@
     <section class="contenedorUser">
         <article class="contenedorImagenPerfil">
             <div>Imagen de Perfil</div>
-            <img src="../../public/img/profile/<%=userData.image%>">
+            <img src="../../public/img/profile/<%=userData.image%>" width="200px">
         </article>
+        <% if(userData.type==="1"){%>
+            <article>
+                <section class="bienvenida">
+                    <h1>Bienvenido Administrador</h1>
+                </section>
+                <section>
+                    <a href="/admin">
+                        <input type="submit" value="Centro de Administracion">
+                    </a>
+                </section>
+            </article>
+            <%}%>
         <article class="itemGeneral">
             <div class="itemuser">
                 <div>Nombre de Usuario: <%=userData.username%> </div>
@@ -13,18 +25,13 @@
                 <div>Correo: <%=userData.email%> </div>
             </div>
             <div class="itemuser">
-                <a href="/src/views/createPublications.ejs">
+                <a href="/publication/create">
                     <input type="submit" value="Crear Publicacion" >
                 </a>
             </div>
             <div class="itemuser">
-                <a href="/src/views/changePassword.ejs">
+                <a href="/profile/edit/<%=userData.id%>">
                     <input type="submit" value="Cambiar Contraseña" >
-                </a>
-            </div>
-            <div>
-                <a">
-                    <input type="submit" value="cerrar session " >
                 </a>
             </div>
         </article>

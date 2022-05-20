@@ -4,11 +4,12 @@ const controllerPublications={
 
     publicaciones:(req,res)=>{
         (async()=>{
-            let publication = await db.publication.findAll();
-            if (publication === null)
+            const usu = await db.users.findAll();
+            const publication = await db.publication.findAll();
+            if (publication === null){
                 return res.render('not-found', {errno: 404, errmsg: "El indice no corresponde a ningun producto"});
-
-            return res.render("publication",{publication:publication})
+            }
+            return res.render("publication",{usu:usu,publication:publication})
         })()
     },
     publicacionesDetalle:(req,res)=>{
@@ -24,7 +25,7 @@ const controllerPublications={
                 id:0,
                 image: req.file.filename,
                 description:req.body.description,
-                user_id:1
+                user_id:req.params.id
             })
             return res.redirect("/publication");
         })()     

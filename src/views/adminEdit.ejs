@@ -1,0 +1,38 @@
+<%-include('./header')%>
+<section class="containerAdminRegister">
+    <a href="/admin">
+        <input type="submit" value="Regresar"></input>
+    </a>
+    <form method="POST" action="/admin/<%=usuarioeditar.id%>?_method=PUT" >
+        <section class="boxFormularioRegister">
+            <h4>Crear cuenta desde el centro de administracion</h4>
+        </section>
+        <section class="boxFormulario">
+            <label class="labelFormulario" for="userName">Nombre de usuario</label>
+            <input class="formularioInput" type="text" name="userNameE" id="userName" placeholder="<%=usuarioeditar.username%>">
+        </section>
+        <section class="boxFormulario">
+            <label class="labelFormulario" for="emailRegister">Correo</label>
+            <input class="formularioInput" type="email" name="emailRegisterE" id="emailRegister" placeholder="<%=usuarioeditar.email%>">
+        </section>
+        <section class="boxFormulario">
+            <label class="labelFormulario" for="passwordRegister">Contraseña</label>
+            <input class="formularioInput" type="password" name="passwordRegisterE">
+        </section>
+        <section class="boxFormulario">
+        </section>
+        <section class="boxFormulario">
+            <label for="">Seleccione el tipo de usuario</label>
+            <select id="type" name="typeE">
+            <optgroup label="Tipo de usuario">
+                <option name="typeE" value= "0" >comun</option>
+                <option name="typeE" value= "1" >administrador</option>
+            </optgroup>
+            </select>
+        </section>
+        <section class="boxFormulario">
+            <input class="botonIngresar" type="submit" value="Registrar Usuario"></input>
+        </section>
+    </form>
+</section>
+<%-include('./footer')%>

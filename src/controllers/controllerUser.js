@@ -1,6 +1,7 @@
 const express= require('express');
 const db=require('../../database/models')
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const res = require('express/lib/response');
 
 const controllerUser= {
 
@@ -46,9 +47,82 @@ const controllerUser= {
     })()
   },
   profile:(req,res)=>{
-    console.log(req.cookies.email)
+    
    return res.render("profile",{userData:req.session.user});
 
+  },
+  logout:(req,res)=>{
+    req.session.destroy();
+    res.clearCookie("email");
+    res.redirect('/')
+  },
+  editUser:(req,res)=>{
+    (async()=>{
+      let usuarioedit= await db.users.findOne({where:{id:req.params.id}});
+      if(usuarioedit===null)
+          return res.render("not-found"),{errno: 404, errmsg: "El indice no corresponde a ningun producto"}
+      else
+          return res.render("editUser",{usuarioedit:usuarioedit})
+          })()
+  },
+  editPutUser:(req,res)=>{
+    (async()=>{
+      let p = await db.users.findOne({where:{id:req.params.id}})
+      if (p===null)
+        return res.render('not-found', {errno: 404, errmsg: "El indice no corresponde a ningun producto"});
+      p.password=bcrypt.hashSync(req.body.passwordEdit,10);
+      p.save();
+      return res.redirect("/profile")
+  })()
+    },
+    adminCenter:(req,res)=>{
+      return res.render("adminCenter")
+    },
+    adminView:(req,res)=>{
+      (async()=>{
+        let usu = await db.users.findAll();
+        if (usu === null){
+            return res.render('not-found', {errno: 404, errmsg: "El indice no corresponde a ningun producto"});
+        }
+        return res.render("adminView",{usu:usu})
+    })()
+    },
+    adminRegister:(req,res)=>{
+      return res.render("adminRegister")
+    },
+    adminRegisterPost:(req,res)=>{
+      (async()=>{
+        db.users.create({
+          username:req.body.userNameR,
+          email: req.body.emailRegisterR,
+          password: bcrypt.hashSync(req.body.passwordRegisterR,10),
+          type: req.body.typeR,
+          image: req.file.filename
+        })
+        return res.redirect("/admin");
+    })()  
+    },
+    adminEditUser:(req,res)=>{
+      (async()=>{
+        let usuarioeditar= await db.users.findOne({where:{id:req.params.id}});
+        if(usuarioeditar===null)
+            return res.render("not-found"),{errno: 404, errmsg: "El indice no corresponde a ningun producto"}
+        else
+            return res.render("adminEdit",{usuarioeditar:usuarioeditar})
+            })()
+    },
+    adminEditPutUser:(req,res)=>{
+      (async()=>{
+        let p = await db.users.findOne({where:{id:req.params.id}})
+        if (p===null)
+          return res.render('not-found', {errno: 404, errmsg: "El indice no corresponde a ningun producto"});
+        p.username= req.body.userNameE
+        p.email=req.body.emailRegisterE
+        p.password=bcrypt.hashSync(req.body.passwordRegisterE,10);
+        p.type= req.body.typeE,
+        p.save();
+        return res.redirect("/admin/view")
+    })()
+    }
   }
-};
 module.exports=controllerUser;
