@@ -33,7 +33,7 @@ routerUser.put('/admin/:id',upload.single('userImageE'),controladorUser.adminEdi
 
 // Api
 routerUser.get('/api',controladorUser.api)
-routerUser.get('/apiCout',controladorUser.apiCout)
+
 
 
 

@@ -1,13 +1,15 @@
 <%-include('./header') %>
-    <section class="contenedorUser">
+    <section class="contenedorEditUser">
+        <article>
     <form method="POST" action="/profile/<%=usuarioedit.id %>?_method=PUT" >
         <section class="boxFormulario">
             <label class="labelFormulario" for="passwordRegister">Inserte la nueva Contraseña</label>
-            <input class="formularioInput" type="password" name="passwordEdit">
+            <input class="descriptionEdit" type="password" name="passwordEdit">
         </section>
         <div>
-            <input type="submit">
+            <input class="botonEdit" type="submit" value="Cambiar">
         </div>
     </form>
+</article>
 </section>
     <%-include('./footer') %>

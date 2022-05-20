@@ -6,6 +6,7 @@ const cookieParser= require('cookie-parser');
 const routerMain = require('./routers/routerMain');
 const routerUser= require('./routers/routerUser');
 const routerPublications=require('./routers/routerPublications')
+const routerCout=require('./routers/routerCout')
 const cors = require('cors')
 
 const app = express();
@@ -28,6 +29,7 @@ app.set('views', './views');
 app.use('/',routerMain);
 app.use('/',routerUser);
 app.use('/',routerPublications)
+app.use('/',routerCout)
 
 // app.use((req,res,next)=>{
 //     res.status(404).render('not-found', {errno: 404, errmsg:"Pagina no encontrada."});

@@ -1,22 +1,26 @@
 
     <%-include('./header')%>
-    <section class="contenedorUser">
-        <article class="contenedorImagenPerfil">
-            <div>Imagen de Perfil</div>
-            <img src="../../public/img/profile/<%=userData.image%>" width="200px">
-        </article>
+    <section class="containerGeneral">
+    <section class="contenedorSoloAdmin">
         <% if(userData.type==="1"){%>
-            <article>
-                <section class="bienvenida">
-                    <h1>Bienvenido Administrador</h1>
+            <article class="contenedorSoloAdmin2">
+                <section class="soloAdmin">
+                    <h2>Bienvenido Administrador: </h2>
                 </section>
+                <br>
                 <section>
-                    <a href="/admin">
-                        <input type="submit" value="Centro de Administracion">
+                    <a class="soloAdmin" href="/admin">
+                        <input class="botonProfile" type="submit" value="Centro de Administracion">
                     </a>
                 </section>
             </article>
             <%}%>
+    </section>
+    <section class="contenedorProfile">
+        <article class="contenedorImagenPerfil">
+            <div>Imagen de Perfil</div>
+            <img src="../../public/img/profile/<%=userData.image%>" width="200px">
+        </article>
         <article class="itemGeneral">
             <div class="itemuser">
                 <div>Nombre de Usuario: <%=userData.username%> </div>
@@ -26,14 +30,21 @@
             </div>
             <div class="itemuser">
                 <a href="/publication/create">
-                    <input type="submit" value="Crear Publicacion" >
+                    <input class="botonProfile" type="submit" value="Crear Publicacion" >
                 </a>
             </div>
             <div class="itemuser">
                 <a href="/profile/edit/<%=userData.id%>">
-                    <input type="submit" value="Cambiar Contraseña" >
+                    <input  class="botonProfile" type="submit" value="Cambiar Contraseña" >
                 </a>
+            </div>
+            <div class="itemuser">
+                <a href="/publication">
+                    <input class="botonProfile" type="submit" value="Regresar">
+                </a>
+
             </div>
         </article>
     </section>
+</section>
     <%-include('./footer')%>

@@ -1,8 +1,11 @@
 <%-include('./header')%>
 <section class="containerView">
+    <section class="regresarV">
     <a href="/admin">
-        <input type="submit" value="Regresar"></input>
+        <input class="botonRV" type="submit" value="Regresar"></input>
     </a>
+</section>
+<section class="UsuarioComun">
     <ul>
         <% for( let i = 0; i< usu.length; i++){ %>
             <% if(usu[i].type === "0"){%>
@@ -10,16 +13,15 @@
         <section>
         <img src="/../../public/img/profile/<%= usu[i].image %>" class="imagen" width="200px">
         </section>
-        <br>
-        <%=usu[i].username%>
-        <br>
+        <div>Nombre de usuario: <%=usu[i].username%></div>
         <a href="/admin/edit/<%= usu[i].id %>">
-            <input type="submit" value="Modificar Usuario">
+            <input class="botonRV2" type="submit" value="Modificar Usuario">
         </a>
         </li>
     <%}%>
     <%}%>
 </ul>
+</section>
 </section>
 
 <%-include('./footer')%>

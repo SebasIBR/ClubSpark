@@ -34,13 +34,14 @@
     display: flex;
     width: 100%;
     flex-direction: column;
+    margin: 1%;
 }
 .labelFormulario{
     font-size: 100%;  
 }   
 .formularioInput{
     width: 100%;
-    height: 30%;
+    height: 46%;
     border: solid 2px black;
     border-radius: 12px;
 }
@@ -48,11 +49,17 @@
     background-color: silver;
     border-width: 0px;
     border-radius: 12px;
-    height: 36px;
+    height: 30%;
     width: 100%;
     color: black;
     transition: 500ms color black ;
     transition: 500ms background-color black;
+}
+.cuenta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 } 
 /*Register*/
 .registerBody{
@@ -78,5 +85,13 @@
     margin-top: 2%;
     padding: 2%;
     font-size: 70%;
+}
+.contenedorFormularioRegister{
+    padding-top: 4%;
+}
+.cuentar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 

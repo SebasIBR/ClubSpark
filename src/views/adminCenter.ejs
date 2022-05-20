@@ -1,17 +1,30 @@
 <%-include('./header')%>
 <section class="containerAdmincenter">
-    <h1 >Hey Bienvenido Administrador</h1>
+    <div class="titulosAC">
+    <h1 >¡Hola! Bienvenido al centro de administracion</h1>
+    <h4>Elige entre las siguientes opciones</h4>
+    </div>
+<div class="botonesAC">
+    <div class="ContenedorBotones">
+    <a href="/cout">
+        <input class="botonAC" type="submit" value=" Ver cantidad de usuarios">
+    </a>
+    </div>
+    <div class="ContenedorBotones">
     <a href="/admin/view">
-        <input type="submit" value="visualizar y Modificar Usuarios">
+        <input class="botonAC" type="submit" value="Modificar Usuarios Comunes">
     </a>
-    <br>
+    </div>
+    <div class="ContenedorBotones">
     <a href="/admin/register">
-        <input type="submit" value="Registrar Usuarios">
+        <input class="botonAC" type="submit" value="Registrar Usuarios Nuevos">
     </a>
-    <br>
+    </div>
+    <div class="ContenedorBotones">
     <a href="/profile">
-        <input type="submit" value="Salir del centro de administracion">
+        <input class="botonAC" type="submit" value="Salir del centro de administracion">
     </a>
-    <h1>Cantidad de usuarios registrados:<%=cantidad%> </h1>
+    </div>
+    </div>
 </section>
 <%-include('./footer')%>
