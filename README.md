@@ -1,7 +1,7 @@
 Descripcion del Proyecto
 ========================
 
-Proyecto de recuperacion del curso de programacion Web Full Stack
+Proyecto Programacion Web Full Stack
 
 ========================
 
