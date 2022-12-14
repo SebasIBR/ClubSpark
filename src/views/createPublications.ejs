@@ -1,0 +1,20 @@
+
+<%-include('./header')%>
+    <section class="contenedorCreate">
+        <article>
+        <form method="POST" class="crearPost" action="/publication/create" enctype="multipart/form-data">
+            <div class="itemCreate">
+                <label for="imagePublication">Inserte imagen:</label></div><div>
+                <input class="descriptioncreate" type="file" id="imagePublication" name="imagePublication">
+            </div>
+            <div class="itemCreate">
+                <label for="description">Descripcion</label></div><div>
+                <input type="text" id="description" name="description">
+            </div>
+            <div class="itemCreate">
+                <input class="botonCreate" type="submit" value="Crear"></input>
+            </div>            
+        </form>
+    </article>
+    </section>
+    <%-include('./footer')%>

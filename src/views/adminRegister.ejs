@@ -1,0 +1,53 @@
+<%-include('./header')%>
+
+<section class="containerAdminRegister">
+    <section class="regresarV">
+    <a href="/admin">
+        <input class="botonRV" type="submit" value="Regresar"></input>
+    </a>
+</section>
+    <section class="UsuarioRegister">
+    <form  action="/admin/register" method="POST" enctype="multipart/form-data">
+        <section class="boxFormularioRegister">
+            <h4>Crear cuenta desde el centro de administracion</h4>
+        </section>
+        <section class="boxFormulario">
+            <label class="labelFormulario" for="userName">Nombre de usuario</label>
+            <input class="formularioInput" type="text" name="userNameR" id="userName" placeholder="Nombre de usuario">
+        </section>
+        <section class="boxFormulario">
+            <label class="labelFormulario" for="emailRegister">Correo</label>
+            <input class="formularioInput" type="email" name="emailRegisterR" id="emailRegister" placeholder="Email">
+        </section>
+        <section class="boxFormulario">
+            <label class="labelFormulario" for="passwordRegister">Contraseña</label>
+            <input class="formularioInput" type="password" name="passwordRegisterR">
+        </section>
+        <section class="boxFormulario">
+        </section>
+        <section class="boxFormulario">
+            <label for="">Seleccione el tipo de usuario</label>
+            <select id="type" name="typeR">
+            <optgroup label="Tipo de usuario">
+                <option name="type" value= "0" >comun</option>
+                <option name="type" value= "1" >administrador</option>
+            </optgroup>
+            </select>
+        </section>
+        <section class="boxformulario">
+            <label for="userImage">Ingrese una imagen de usuario menor a 1mb</label>
+            <br>
+            <input  class="formularioInputImage" type="file" name="userImageR">
+        </section>
+        <section class="boxFormulario">
+            <input class="botonIngresar" type="submit" value="Registrar Usuario"></input>
+        </section>
+    </form>
+</section>
+</section>
+
+
+
+
+
+<%-include('./footer')%>

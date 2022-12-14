@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./head')%>
+<body class="registerBody">
+    <main class="Register">
+        <article class="contenedorFormularioRegister">
+            <form class="formularioRegister" action="/register" method="POST" enctype="multipart/form-data"> 
+                <section class="boxFormularioRegister">
+                    <h3>¡Bienvenido!</h3>
+                    <h4>Crea una cuenta y se parte del Club Spark Colombia</h4>
+                </section>
+                <section class="boxFormulario">
+                    <label class="labelFormulario" for="userName">Nombre de usuario</label>
+                    <input class="formularioInput" type="text" name="userName" id="userName">
+                </section>
+                <section class="boxFormulario">
+                    <label class="labelFormulario" for="emailRegister">Correo</label>
+                    <input class="formularioInput" type="email" name="emailRegister" id="emailRegister">
+                </section>
+                <section class="boxFormulario">
+                    <label class="labelFormulario" for="passwordRegister">Contraseña</label>
+                    <input class="formularioInput" type="password" name="passwordRegister">
+                </section>
+                <section class="boxFormulario">
+                </section>
+                <section class="boxFormulario">
+                    <label for="">Seleccione el tipo de usuario</label>
+                    <select id="type" name="type">
+                    <optgroup label="Tipo de usuario">
+                        <option name="type" value= "0" >comun</option>
+                        <option name="type" value= "1" >administrador</option>
+                    </optgroup>
+                    </select>
+                </section>
+                <section class="boxformulario">
+                    <label for="userImage">Ingrese una imagen de usuario menor a 1mb</label>
+                    <br>
+                    <input  class="formularioInputImage" type="file" name="userImage">
+                </section>
+                <section class="boxFormulario">
+                    <input class="botonIngresar" type="submit" value="Registrarse"></input>
+                </section>
+                <section class="boxFormularioRegister">
+                    <div class="cuentar">
+                    <h1>¿YA tienes cuenta?</h1>
+                    <a href="/">Inicia Sesion aqui</a>
+                    </div>
+                </section>
+            </form>
+        </article> 
+
+
+    </main>
+    
+</body>
+</html>

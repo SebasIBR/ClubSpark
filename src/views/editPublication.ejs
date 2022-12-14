@@ -1,0 +1,25 @@
+
+<%-include('./header')%>
+    <section class="contenedorUser">
+        <form method="POST" action="/publication/<%=publicacion.id %>?_method=PUT">
+            <div>
+                <label for="imagePublication">imagen</label></div><div>
+                <img src="/../../public/img/<%= publicacion.image %>">
+            </div>
+            <div>
+                <label for="description">descripcion</label></div><div>
+                <input type="text" id="description" name="description" placeholder="<%=publicacion.description%>" value="<%= publicacion.description %>">
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+            <div>
+                <form method="POST" action="/delete/<%= publicacion.id %>?_method=DELETE" >
+                    <button type="submit">Eliminar publicacion</button>
+                </form>
+            </div>
+        </form>
+    </section>
+    
+
+    <%-include('./footer')%>

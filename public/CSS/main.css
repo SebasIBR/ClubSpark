@@ -1,0 +1,362 @@
+body{
+    background-color: silver;
+    margin: 0%;
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; 
+} 
+
+/* Header */
+ .header{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+}
+ .logoMain{
+    margin: 1% 0% 1% 4%;
+    width: 20%;
+    background-color: black;
+} 
+ .main-top{
+    font-size: x-large;
+    padding-left: 5%;
+    width: 50%;
+    background-color: black;
+    display:  flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.selector{
+    color: silver;
+    text-decoration: none;
+} 
+/* Footer */
+ .footer{
+    color: silver;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    flex-direction: column;
+    align-items: center;
+
+}
+.contenedorAliados{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+}
+.derechos{
+    padding-top: 2%;
+}
+/* Publication */
+.contenedorPublication{
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedorPublication ul{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 50%;
+
+}
+.contenedorPublication li{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: beige;
+    margin: 1%;
+    padding:3%;
+    border-radius: 4%;
+}
+.contenedorPublication img{
+    width: 100%;
+}
+/* profile */
+.containerGeneral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+}
+.contenedorSoloAdmin{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.contenedorSoloAdmin2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.contenedorProfile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 1%;
+
+}
+.soloAdmin{
+    margin-left:5% ;
+}
+
+.itemGeneral{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    padding: 1%;
+    background-color: beige;
+    border-radius: 5%;
+}
+.itemuser{
+
+    margin: 1%;
+}
+.contenedorImagenPerfil{
+    padding: 1%;
+    background-color: beige;
+    border-radius: 5%;
+}
+.contenedorImagenPerfil img{
+    width: 100%;
+}
+.botonProfile{
+    margin-top: 3%;
+    padding: 3%;
+    background-color: silver;
+    border-width: 0px;
+    border-radius: 12px;
+    height: auto;
+    width: 100%;
+    color: black;
+    transition: 500ms color black ;
+    transition: 500ms background-color black;
+}
+/* Crar Publication */
+.contenedorCreate{
+    padding-top: 10%;
+}
+.contenedorCreate article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6.3%;
+
+    border-radius: 5%;
+}
+.contenedorCreate article form{
+    background-color: beige;
+    padding: 2%;
+    border-radius: 5%;
+    width: 40%;
+}
+.descriptioncreate{
+    width: 40%;
+    height: 30%;
+}
+.botonCreate{
+    margin-top: 3%;
+    padding: 3%;
+    background-color: silver;
+    border-width: 0px;
+    border-radius: 12px;
+    height: auto;
+    width: 100%;
+    color: black;
+    transition: 500ms color black ;
+    transition: 500ms background-color black;
+}
+/* Editar contraseña */
+.contenedorEditUser{
+    padding-top: 10%;
+}
+.contenedorEditUser article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8%;
+
+
+}
+.contenedorEditUser article form{
+    background-color: beige;
+    padding: 2%;
+    border-radius: 7%;
+    width: 40%;
+}
+.descriptionEdit{
+    width: 40%;
+    height: 30%;
+}
+.botonEdit{
+    margin-top: 3%;
+    padding: 3%;
+    background-color: silver;
+    border-width: 0px;
+    border-radius: 12px;
+    height: auto;
+    width: 100%;
+    color: black;
+    transition: 500ms color black ;
+    transition: 500ms background-color black;
+}
+/* Centro De administracion */
+/* Admin */
+.containerAdmincenter{
+    padding-top: 9%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.titulosAC{
+    padding-left: 10%;
+}
+.botonesAC{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    
+}
+.ContenedorBotones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    padding-top: 0%;
+    padding-bottom: 0.7%;
+}
+.botonAC{
+    padding-top:50%;
+    padding-bottom: 50%;
+    margin:1%;
+    width: 100%;
+    height: 50%;
+    border-width: 0px;
+    border-radius: 40px;
+    background-color: beige;
+    color: black;
+    transition: border-radius 500ms;
+    transition: background-color 500ms;
+    transition: color 500ms;
+}
+.botonAC:hover{
+    border-radius: 70%;
+    background-color: black;
+    color: beige;
+    transition: 500ms;
+}
+/* Cantidad de usuarios Cout */
+.contenedorcout{
+padding-top: 10%;
+display: flex;
+align-items: center;
+width: 100%;
+}
+.cout{
+padding: 10%;
+display: flex;
+align-items: center;
+flex-direction: column;
+width: 100%;
+padding-left: 5%;
+}
+/* Admin View */
+.containerView{
+    width: 100%;
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.regresarV{
+    padding-left: 5%;
+}
+.botonRV{
+    padding: 1%;
+    background-color: beige;
+    border-width: 0px;
+    border-radius: 12px;
+    height: auto;
+    width: 10%;
+    color: black;
+    transition: 500ms color black ;
+    transition: 500ms background-color black;
+}
+.UsuarioComun{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+}
+.botonRV2{
+    padding: 1%;
+    background-color: beige;
+    border-width: 0px;
+    border-radius: 12px;
+    height: auto;
+    width: 100%;
+    color: black;
+    transition: 500ms color black ;
+    transition: 500ms background-color black;
+
+}
+
+/*Admin Edit0 */
+.containerAdminEdit{
+    padding-top: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.UsuarioComunEdit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+}
+.UsuarioComunEdit form{
+    background-color: beige;
+    border-radius: 10%;
+    padding: 2%;
+    margin: 1%;
+}
+
+/* Admin Register */
+.containerAdminRegister{
+    padding-top: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+.UsuarioRegister{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+
+}
+.UsuarioRegister form{
+    background-color: beige;
+    border-radius: 10%;
+    padding: 2%;
+    margin: 1%;
+
+}
+
+
+
+
+
+

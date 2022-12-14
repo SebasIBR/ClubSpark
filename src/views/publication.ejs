@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%-include('./header')%>
+    <section class="contenedorPublication">
+        <ul>
+            <% for( let i=0 ; i < publication.length; i++){ %>
+            <li>
+               <img src="/../../public/img/<%= publication[i].image %>" class="imagen" >
+                <%=publication[i].description %>
+                <%=publication[i].user_id %>
+            </li>
+            <% } %>
+        </ul>
+    </section>
+    <%-include('./footer')%>
+  

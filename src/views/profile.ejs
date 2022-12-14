@@ -1,0 +1,50 @@
+
+    <%-include('./header')%>
+    <section class="containerGeneral">
+    <section class="contenedorSoloAdmin">
+        <% if(userData.type==="1"){%>
+            <article class="contenedorSoloAdmin2">
+                <section class="soloAdmin">
+                    <h2>Bienvenido Administrador: </h2>
+                </section>
+                <br>
+                <section>
+                    <a class="soloAdmin" href="/admin">
+                        <input class="botonProfile" type="submit" value="Centro de Administracion">
+                    </a>
+                </section>
+            </article>
+            <%}%>
+    </section>
+    <section class="contenedorProfile">
+        <article class="contenedorImagenPerfil">
+            <div>Imagen de Perfil</div>
+            <img src="../../public/img/profile/<%=userData.image%>">
+        </article>
+        <article class="itemGeneral">
+            <div class="itemuser">
+                <div>Nombre de Usuario: <%=userData.username%> </div>
+            </div>
+            <div class="itemuser">
+                <div>Correo: <%=userData.email%> </div>
+            </div>
+            <div class="itemuser">
+                <a href="/publication/create">
+                    <input class="botonProfile" type="submit" value="Crear Publicacion" >
+                </a>
+            </div>
+            <div class="itemuser">
+                <a href="/profile/edit/<%=userData.id%>">
+                    <input  class="botonProfile" type="submit" value="Cambiar Contraseña" >
+                </a>
+            </div>
+            <div class="itemuser">
+                <a href="/publication">
+                    <input class="botonProfile" type="submit" value="Regresar">
+                </a>
+
+            </div>
+        </article>
+    </section>
+</section>
+    <%-include('./footer')%>

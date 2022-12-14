@@ -1,0 +1,97 @@
+/* Body*/
+*{
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; 
+}
+
+/*Login*/
+.mainBody{
+    position: relative;
+    height: 500px;
+    background-color: black;
+    background-image: url("/public/img/CSCMedblanco (1).png");
+    background-repeat:no-repeat;
+    background-position-x:10%;
+    background-position-y:60%;
+    background-size: 50%;
+}
+.formularioLogin{
+    position: absolute;
+    width: 23%;
+    border: solid 5%;
+    border-radius: 7%;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 60%;
+    margin-top: 8%;
+    padding: 2%;
+    font-size: 70%;
+} 
+.boxFormulario{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 1%;
+}
+.labelFormulario{
+    font-size: 100%;  
+}   
+.formularioInput{
+    width: 100%;
+    height: 46%;
+    border: solid 2px black;
+    border-radius: 12px;
+}
+.botonIngresar{
+    background-color: silver;
+    border-width: 0px;
+    border-radius: 12px;
+    height: 30%;
+    width: 100%;
+    color: black;
+    transition: 500ms color black ;
+    transition: 500ms background-color black;
+}
+.cuenta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+} 
+/*Register*/
+.registerBody{
+    position: relative;
+    height: 500px;
+    background-color: black;
+    background-image: url("/public/img/CSCMedblanco (1).png");
+    background-repeat:no-repeat;
+    background-position-x:10%;
+    background-position-y:60%;
+    background-size: 50%;
+}
+.formularioRegister{
+    position: absolute;
+    width: 23%;
+    border: solid 5%;
+    border-radius: 7%;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 60%;
+    margin-top: 2%;
+    padding: 2%;
+    font-size: 70%;
+}
+.contenedorFormularioRegister{
+    padding-top: 4%;
+}
+.cuentar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
